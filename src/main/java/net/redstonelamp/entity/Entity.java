@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -25,14 +25,14 @@ import net.redstonelamp.metadata.MetadataDictionary;
  *
  * @author RedstoneLamp Team
  */
-public abstract class Entity {
+public abstract class Entity{
     private int entityID;
     private Position position;
     private String nametag;
     private MetadataDictionary metadata;
     private boolean initialized = false;
 
-    protected void initEntity() {
+    protected void initEntity(){
         initialized = true;
     }
 
@@ -40,7 +40,7 @@ public abstract class Entity {
      * Spawns this entity to a player. This method may be overridden in child classes.
      * @param player The Player this entity will spawn to
      */
-    public void spawnTo(Player player) {
+    public void spawnTo(Player player){
         //TODO: Send AddEntityResponse or Request?
     }
 
@@ -48,11 +48,11 @@ public abstract class Entity {
      * De-spawns this entity (removes) from a player. This method may be overriden in child classes.
      * @param player The Player this entity will spawn to
      */
-    public void despawnFrom(Player player) {
+    public void despawnFrom(Player player){
         //TODO: Send RemoveEntityResponse or Request?
     }
 
-    public int getEntityID() {
+    public int getEntityID(){
         return entityID;
     }
 
@@ -60,35 +60,35 @@ public abstract class Entity {
      * Sets this entity's ID. WARNING: ONLY FOR USE IN initEntity()!!!
      * @param id The EntityID of the player
      */
-    protected void setEntityID(int id) {
+    protected void setEntityID(int id){
         this.entityID = id;
     }
 
-    public MetadataDictionary getMetadata() {
+    public MetadataDictionary getMetadata(){
         return metadata;
     }
 
-    protected void setMetadata(MetadataDictionary metadata) {
+    protected void setMetadata(MetadataDictionary metadata){
         this.metadata = metadata;
     }
 
-    public boolean isInitialized() {
+    public boolean isInitialized(){
         return initialized;
     }
 
-    public Position getPosition() {
+    public Position getPosition(){
         return position;
     }
 
-    public void setPosition(Position position) {
+    public void setPosition(Position position){
         this.position = position;
     }
 
-    public String getNametag() {
+    public String getNametag(){
         return nametag;
     }
 
-    public void setNametag(String nametag) {
+    public void setNametag(String nametag){
         this.nametag = nametag;
     }
 }

@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -23,7 +23,7 @@ package net.redstonelamp.network.pe.sub.v27;
  * PocketMine-MP is licensed under the LGPL v3. All credit to the PocketMine team
  * @author PocketMine Team (translated by RedstoneLamp Team)
  */
-public interface ProtocolConst27 {
+public interface ProtocolConst27{
     /**
      * The Minecraft: Pocket Edition version this subprotocol implements.
      */
@@ -82,10 +82,10 @@ public interface ProtocolConst27 {
     public static final byte FULL_CHUNK_DATA_PACKET = (byte) 0xaf;
     public static final byte SET_DIFFICULTY_PACKET = (byte) 0xb0;
     public static final byte BATCH_PACKET = (byte) 0xb1;
-    
+
     public static final byte TEXT_RAW = (byte) 0x00;
-	public static final byte TEXT_CHAT = (byte) 0x01;
-	public static final byte TEXT_TRANSLATION = (byte) 0x02;
-	public static final byte TEXT_POPUP = (byte) 0x03;
-	public static final byte TEXT_TIP = (byte) 0x04;
+    public static final byte TEXT_CHAT = (byte) 0x01;
+    public static final byte TEXT_TRANSLATION = (byte) 0x02;
+    public static final byte TEXT_POPUP = (byte) 0x03;
+    public static final byte TEXT_TIP = (byte) 0x04;
 }

@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -21,7 +21,7 @@ package net.redstonelamp.level;
  *
  * @author RedstoneLamp Team
  */
-public class ChunkPosition {
+public class ChunkPosition{
     private int x;
     private int z;
 
@@ -30,7 +30,7 @@ public class ChunkPosition {
      * @param x The X coordinate of the chunk
      * @param z The Z coordinate of the chunk
      */
-    public ChunkPosition(int x, int z) {
+    public ChunkPosition(int x, int z){
         this.x = x;
         this.z = z;
     }
@@ -39,7 +39,7 @@ public class ChunkPosition {
      * Get the X coordinate of this ChunkPosition
      * @return The X coordinate of the ChunkPosition
      */
-    public int getX() {
+    public int getX(){
         return x;
     }
 
@@ -47,7 +47,7 @@ public class ChunkPosition {
      * Set the X coordinate of this ChunkPosition
      * @param x The X coordinate of the ChunkPosition
      */
-    public void setX(int x) {
+    public void setX(int x){
         this.x = x;
     }
 
@@ -55,7 +55,7 @@ public class ChunkPosition {
      * Get the Z coordinate of this ChunkPosition
      * @return The Z coordinate of the ChunkPosition
      */
-    public int getZ() {
+    public int getZ(){
         return z;
     }
 
@@ -63,15 +63,15 @@ public class ChunkPosition {
      * Set the Z coordinate of this ChunkPosition
      * @param z The Z coordinate of the ChunkPosition
      */
-    public void setZ(int z) {
+    public void setZ(int z){
         this.z = z;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if(obj instanceof ChunkPosition) {
+    public boolean equals(Object obj){
+        if(obj instanceof ChunkPosition){
             ChunkPosition pos = (ChunkPosition) obj;
-            if(pos.getX() == getX() && pos.getZ() == getZ()) {
+            if(pos.getX() == getX() && pos.getZ() == getZ()){
                 return true;
             }
             return false;
@@ -80,7 +80,7 @@ public class ChunkPosition {
     }
 
     @Override
-    public String toString() {
-        return "ChunkPosition: {x: "+x+", z:"+z+"}";
+    public String toString(){
+        return "ChunkPosition: {x: " + x + ", z:" + z + "}";
     }
 }

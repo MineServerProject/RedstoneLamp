@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -21,7 +21,7 @@ package net.redstonelamp.level;
  *
  * @author RedstoneLamp team
  */
-public class Chunk {
+public class Chunk{
 
     private final ChunkPosition position;
 
@@ -46,55 +46,55 @@ public class Chunk {
         this.biomeColors = biomeColors;
     }
 
-    public byte[] getBiomeColors() {
+    public byte[] getBiomeColors(){
         return biomeColors;
     }
 
-    public byte[] getHeightmap() {
+    public byte[] getHeightmap(){
         return heightmap;
     }
 
-    public byte[] getBlocklight() {
+    public byte[] getBlocklight(){
         return blocklight;
     }
 
-    public byte[] getSkylight() {
+    public byte[] getSkylight(){
         return skylight;
     }
 
-    public byte[] getBlockMeta() {
+    public byte[] getBlockMeta(){
         return blockMeta;
     }
 
-    public byte[] getBlockIds() {
+    public byte[] getBlockIds(){
         return blockIds;
     }
 
-    public void setBlockIds(byte[] blockIds) {
+    public void setBlockIds(byte[] blockIds){
         this.blockIds = blockIds;
     }
 
-    public void setBlockMeta(byte[] blockMeta) {
+    public void setBlockMeta(byte[] blockMeta){
         this.blockMeta = blockMeta;
     }
 
-    public void setSkylight(byte[] skylight) {
+    public void setSkylight(byte[] skylight){
         this.skylight = skylight;
     }
 
-    public void setBlocklight(byte[] blocklight) {
+    public void setBlocklight(byte[] blocklight){
         this.blocklight = blocklight;
     }
 
-    public void setHeightmap(byte[] heightmap) {
+    public void setHeightmap(byte[] heightmap){
         this.heightmap = heightmap;
     }
 
-    public void setBiomeColors(byte[] biomeColors) {
+    public void setBiomeColors(byte[] biomeColors){
         this.biomeColors = biomeColors;
     }
 
-    public ChunkPosition getPosition() {
+    public ChunkPosition getPosition(){
         return position;
     }
 }

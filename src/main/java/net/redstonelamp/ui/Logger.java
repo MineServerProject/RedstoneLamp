@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -24,7 +24,7 @@ import java.io.StringWriter;
  *
  * @author RedstoneLamp Team
  */
-public class Logger {
+public class Logger{
     private final ConsoleOut out;
 
     /**
@@ -109,7 +109,7 @@ public class Logger {
      */
     public void buffer(String prefix, byte[] buffer, String suffix){
         StringBuilder out = new StringBuilder(buffer.length * 3);
-        for(byte bite: buffer){
+        for(byte bite : buffer){
             String string = Integer.toHexString(bite & 0xFF);
             while(string.length() < 2){
                 string = "0" + string;
@@ -127,12 +127,12 @@ public class Logger {
     public void trace(Throwable t){
         StringWriter writer = new StringWriter();
         t.printStackTrace(new PrintWriter(writer));
-        for(String str: writer.toString().split("[\r\n]+")){
+        for(String str : writer.toString().split("[\r\n]+")){
             trace(str);
         }
     }
 
-    public Class<? extends ConsoleOut> getConsoleOutClass() {
+    public Class<? extends ConsoleOut> getConsoleOutClass(){
         return out.getClass();
     }
 }

@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -26,7 +26,7 @@ import java.util.Properties;
  *
  * @author RedstoneLamp Team
  */
-public class ServerConfig {
+public class ServerConfig{
     private Properties properties;
 
     /**
@@ -34,7 +34,7 @@ public class ServerConfig {
      * @param configLocation
      * @throws java.io.IOException If the configuration can not be loaded.
      */
-    public ServerConfig(File configLocation) throws IOException {
+    public ServerConfig(File configLocation) throws IOException{
         properties = new Properties();
         properties.load(new FileInputStream(configLocation));
     }
@@ -44,7 +44,7 @@ public class ServerConfig {
      * @param property The Property to get the value from
      * @return The property's value, as a <code>String</code>
      */
-    public String getString(String property) {
+    public String getString(String property){
         return properties.getProperty(property);
     }
 
@@ -53,7 +53,7 @@ public class ServerConfig {
      * @param property The Property to get the value from
      * @return The property's value, as a <code>Boolean</code>
      */
-    public boolean getBoolean(String property) {
+    public boolean getBoolean(String property){
         return Boolean.parseBoolean(properties.getProperty(property));
     }
 
@@ -62,7 +62,7 @@ public class ServerConfig {
      * @param property The Property to get the value from
      * @return The property's value, as an <code>Integer</code>
      */
-    public int getInt(String property) {
+    public int getInt(String property){
         return Integer.parseInt(properties.getProperty(property));
     }
 }

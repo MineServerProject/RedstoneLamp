@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -27,25 +27,26 @@ import net.redstonelamp.nio.BinaryBuffer;
 public class MetadataLong extends MetadataElement{
     private long l;
 
-    public MetadataLong() { }
+    public MetadataLong(){
+    }
 
     public MetadataLong(long l){
         this.l = l;
     }
 
     @Override
-    public void fromBytes(BinaryBuffer bb) {
+    public void fromBytes(BinaryBuffer bb){
         l = bb.getLong();
     }
 
     @Override
-    public void toBytes(BinaryBuffer bb, int index) {
+    public void toBytes(BinaryBuffer bb, int index){
         bb.putByte(getKey((byte) index));
         bb.putLong(l);
     }
 
     @Override
-    public byte getIdentifier() {
+    public byte getIdentifier(){
         return 7;
     }
 }

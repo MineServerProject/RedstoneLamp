@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -29,7 +29,7 @@ import java.util.List;
  *
  * @author RedstoneLamp Team
  */
-public class RedstoneTicker {
+public class RedstoneTicker{
     private static final String ANTISPAM_LOAD_MEASURE_TOO_HIGH = "net.redstonelamp.ticker.RedstoneTicker.LoadMeasureTooHigh";
     private final Server server;
     private long sleep;
@@ -46,7 +46,7 @@ public class RedstoneTicker {
      * @param server The Server this ticker belongs to.
      * @param sleepNanos The amount of nanoseconds to sleep for. (default 50)
      */
-    public RedstoneTicker(Server server, int sleepNanos) {
+    public RedstoneTicker(Server server, int sleepNanos){
         this.server = server;
         sleep = sleepNanos;
     }
@@ -54,7 +54,7 @@ public class RedstoneTicker {
     /**
      * Start this ticker. This method actually runs the ticker too, therefor it blocks.
      */
-    public void start() {
+    public void start(){
         if(running){
             throw new IllegalStateException("Ticker is already running");
         }
@@ -69,7 +69,7 @@ public class RedstoneTicker {
             // calculate server load
             long now = System.currentTimeMillis();
             long diff = now - lastTickMilli;
-            loadMeasure = diff * 100D /  sleep;
+            loadMeasure = diff * 100D / sleep;
             if(loadMeasure > 80D){
                 AntiSpam.act(() -> server.getLogger().warning("The server load is too high! (%f / 100)", loadMeasure), ANTISPAM_LOAD_MEASURE_TOO_HIGH, 5000);
                 //server.getLogger().warning("The server load is too high! (%f / 100)", loadMeasure);
@@ -97,7 +97,7 @@ public class RedstoneTicker {
 
         }
         synchronized(tasks){
-            for(RegisteredTask task: tasks){
+            for(RegisteredTask task : tasks){
                 task.getTask().onFinalize();
             }
         }
@@ -123,7 +123,7 @@ public class RedstoneTicker {
             throw new IllegalStateException("Ticker is not running and cannot be stopped");
         }
         running = false;
-        while(!lastTickDone);
+        while(!lastTickDone) ;
     }
 
     public synchronized void addDelayedTask(Task task, int delay){

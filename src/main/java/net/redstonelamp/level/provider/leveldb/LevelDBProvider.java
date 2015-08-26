@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -61,23 +61,23 @@ public class LevelDBProvider implements LevelProvider{
      * @param databaseDir The directory in which the database files are contained.
      *                    This is usually "db".
      */
-    public LevelDBProvider(Level level, File databaseDir) {
+    public LevelDBProvider(Level level, File databaseDir){
         this.level = level;
 
         Options options = new Options();
         options.createIfMissing(true);
         options.compressionType(CompressionType.ZLIB);
 
-        try {
+        try{
             database = Iq80DBFactory.factory.open(databaseDir, options);
-        } catch (IOException e) {
-            level.getManager().getServer().getLogger().error(e.getClass().getName()+" while loading LevelDB world "+databaseDir.getName());
+        }catch(IOException e){
+            level.getManager().getServer().getLogger().error(e.getClass().getName() + " while loading LevelDB world " + databaseDir.getName());
             throw new LevelLoadException(e);
         }
     }
 
     @Override
-    public Chunk getChunk(ChunkPosition position) {
+    public Chunk getChunk(ChunkPosition position){
         byte[] key = Key.TYPE_TERRAIN_DATA.assembleKey(position);
         byte[] data = database.get(key);
         if(data == null){
@@ -104,7 +104,7 @@ public class LevelDBProvider implements LevelProvider{
         return c;
     }
 
-    private void genNewLevelData(File file) throws IOException {
+    private void genNewLevelData(File file) throws IOException{
         IntTag x = new IntTag("SpawnX", 128);
         IntTag y = new IntTag("SpawnY", 3); //TODO: Correct positions
         IntTag z = new IntTag("SpawnZ", 128);
@@ -122,16 +122,16 @@ public class LevelDBProvider implements LevelProvider{
     }
 
     @Override
-    public void shutdown() {
-        try {
+    public void shutdown(){
+        try{
             database.close();
-        } catch (IOException e) {
-            level.getManager().getServer().getLogger().warning("Failed to close LevelDB database for level "+level.getName());
+        }catch(IOException e){
+            level.getManager().getServer().getLogger().warning("Failed to close LevelDB database for level " + level.getName());
         }
     }
 
     @Override
-    public void loadLevelData(File file) throws IOException {
+    public void loadLevelData(File file) throws IOException{
         if(!file.exists()){
             level.getManager().getServer().getLogger().info("Couldn't find level.dat, creating new...");
             genNewLevelData(file);

@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -30,7 +30,7 @@ import net.redstonelamp.response.RemovePlayerResponse;
 public abstract class PlayerEntity extends Entity{
 
     @Override
-    protected void initEntity() {
+    protected void initEntity(){
         MetadataDictionary data = new MetadataDictionary();
         data.put((byte) 0, new MetadataByte((byte) 0)); //TODO: Is player on fire
         data.put((byte) 1, new MetadataShort((short) 300)); //Air
@@ -47,9 +47,9 @@ public abstract class PlayerEntity extends Entity{
     }
 
     @Override
-    public void spawnTo(Player player) {
-        if(player != this) {
-            if(this instanceof Player) {
+    public void spawnTo(Player player){
+        if(player != this){
+            if(this instanceof Player){
                 Player me = ((Player) this);
                 player.getProtocol().sendImmediateResponse(new AddPlayerResponse(me), player);
             }
@@ -57,9 +57,9 @@ public abstract class PlayerEntity extends Entity{
     }
 
     @Override
-    public void despawnFrom(Player player) {
-        if(player != this) {
-            if(this instanceof Player) {
+    public void despawnFrom(Player player){
+        if(player != this){
+            if(this instanceof Player){
                 Player me = ((Player) this);
                 player.getProtocol().sendImmediateResponse(new RemovePlayerResponse(me), player);
             }

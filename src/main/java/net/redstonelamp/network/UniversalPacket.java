@@ -1,16 +1,16 @@
 /**
  * This file is part of RedstoneLamp.
- *
+ * <p>
  * RedstoneLamp is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * <p>
  * RedstoneLamp is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- *
+ * <p>
  * You should have received a copy of the GNU Lesser General Public License
  * along with RedstoneLamp.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -27,7 +27,7 @@ import java.nio.ByteOrder;
  *
  * @author RedstoneLamp Team
  */
-public class UniversalPacket {
+public class UniversalPacket{
     private byte[] buffer;
     private SocketAddress address;
     private BinaryBuffer bb;
@@ -38,7 +38,7 @@ public class UniversalPacket {
      * @param buffer The buffer this packet contains.
      * @param address The address this packet came/was sent from.
      */
-    public UniversalPacket(byte[] buffer, SocketAddress address) {
+    public UniversalPacket(byte[] buffer, SocketAddress address){
         this.buffer = buffer;
         this.address = address;
         bb = BinaryBuffer.wrapBytes(buffer, ByteOrder.BIG_ENDIAN);
@@ -51,7 +51,7 @@ public class UniversalPacket {
      *              the underlying DynamicByteBuffer.
      * @param address The address this packet came/was sent from.
      */
-    public UniversalPacket(byte[] buffer, ByteOrder order, SocketAddress address) {
+    public UniversalPacket(byte[] buffer, ByteOrder order, SocketAddress address){
         this.buffer = buffer;
         this.address = address;
         bb = BinaryBuffer.wrapBytes(buffer, order);
@@ -61,7 +61,7 @@ public class UniversalPacket {
      * Returns the DynamicByteBuffer of the packet <code>buffer</code>. This DOES NOT create a new instance of the buffer.
      * @return The DynamicByteBuffer belonging to the packet.
      */
-    public BinaryBuffer bb() {
+    public BinaryBuffer bb(){
         return bb;
     }
 
@@ -69,7 +69,7 @@ public class UniversalPacket {
      * Get the address this packet came/was sent from.
      * @return The packet's original address.
      */
-    public SocketAddress getAddress() {
+    public SocketAddress getAddress(){
         return address;
     }
 
@@ -77,7 +77,7 @@ public class UniversalPacket {
      * Get the buffer of this packet.
      * @return The buffer, as a byte array.
      */
-    public byte[] getBuffer() {
+    public byte[] getBuffer(){
         return buffer;
     }
 }
