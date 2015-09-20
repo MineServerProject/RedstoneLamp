@@ -271,6 +271,11 @@ public class Server implements Runnable{
      *
      * @return The <code>Logger</code> instance the server uses.
      */
+     
+    public CommandManager getCommandManager(){
+    	return commandManager;
+    }
+    
     public Logger getLogger(){
         return logger;
     }
@@ -289,6 +294,10 @@ public class Server implements Runnable{
 
     public ServerConfig getConfig(){
         return config;
+    }
+    
+    public ScriptManager getScriptManager(){
+    	return scriptManager;
     }
 
     public LevelManager getLevelManager(){
